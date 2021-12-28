@@ -46,14 +46,19 @@ const btnClicked = document.querySelectorAll(".btnClicked")
 btnClicked.forEach(function (element) {
     current.textContent = ""
     element.addEventListener("click", function () {
+        console.log(current.textContent);
+        
         if (show.textContent == "") {
             current.textContent += this.textContent
         } else {
             newCur += this.textContent
             current.textContent = newCur
         }
-        if (current.textContent == 0) {
+        if (current.textContent == 0 ) {
             current.textContent = ""
+        }
+        if (current.textContent == "." ) {
+            current.textContent = "0."
         }
     })
 })
